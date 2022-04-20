@@ -1,0 +1,612 @@
+*{
+    outline: none !important;
+    font-size: .9rem;
+}
+:root {
+    --company-red-color: hsl(354, 76%, 50%);
+    --company-yellow-color: hsl(47, 95%, 70%);
+    --company-green-color: hsl(148, 81%, 27%);
+    --defaut-text-color: #202020;
+    --lite-text-color: #484848;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+input:focus,
+select:focus {
+    box-shadow: none;
+}
+.topbar-container {
+    background: var(--company-red-color);
+    transition: .3s;
+}
+.topbar {
+    color: #fff;
+}
+.topbar a:hover {
+    color: var(--defaut-text-color);
+}
+.topbar .search-group {
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 1px solid #fff;
+}
+.topbar .search-group input {
+    -moz-border-radius-topleft: 25px;
+    -moz-border-radius-bottomleft: 25px;
+    color: #fff;
+    border: none !important;
+}
+.topbar .search-group input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.topbar .search-group input::placeholder {
+    color: #fff;
+    opacity: .5;
+}
+.hide-topbar {
+    display: none;
+}
+/******* Navbar *******/
+.logo img {
+    width: 120px;
+}
+.navbar-nav .nav-item {
+    margin: auto 2rem;
+}
+.navbar-nav .nav-item .nav-link {
+    color: var(--defaut-text-color);
+    text-transform: uppercase;
+    font-size: .8rem;
+    display: inline-block;
+    position: relative;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.navbar-nav .nav-item .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--company-red-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/******* End Navbar *******/
+.container {
+    max-width: 1200px;
+}
+/******* Hero CSS *******/
+.carousel-item {
+    height: 50vh;
+    position: relative;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel-item .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+}
+.carousel-item .carousel-caption {
+    padding-bottom: 10%;
+}
+.carousel-item .carousel-caption h5 {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+.carousel-item .button {
+    background: var(--company-red-color);
+    padding: .3rem 3rem;
+    border-radius: 25px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 5px 15px;
+}
+/******* Hero CSS *******/
+
+
+
+/**** Search Section ****/
+#search-section {
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+.search-card {
+    margin-bottom: 2rem;
+}
+#tyre-by-size select,
+#rim-by-size select,
+#tyre-by-vehicle select,
+#rim-by-vehicle select {
+    border-radius: 25px;
+    margin-bottom: 1rem;
+}
+#tyre-by-size select:focus,
+#rim-by-size select:focus,
+#tyre-by-vehicle select:focus,
+#rim-by-vehicle select:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid var(--company-yellow-color);
+}
+#tyre-by-size button,
+#rim-by-size button,
+#rim-by-vehicle button,
+#tyre-by-vehicle button {
+    background: var(--company-red-color);
+    padding: .3rem 3rem;
+    border-radius: 25px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0 5px 15px;
+    color: #fff;
+}
+/**** End Search Field ****/
+.featured .default-h-four {
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+}
+.featured .default-h-four:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -.5rem;
+    left: 0;
+    background-color: var(--company-red-color);
+}
+
+/**** Search Field Default *****/
+.product-search {
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 1px solid var(--defaut-text-color);
+}
+.product-search input {
+    -moz-border-radius-topleft: 25px;
+    -moz-border-radius-bottomleft: 25px;
+    color: var(--defaut-text-color);
+    border: none !important;
+}
+.product-search input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.product-search input::placeholder {
+    color: var(--defaut-text-color);
+    font-size: .8rem;
+    opacity: .5;
+}
+.product-search span {
+    background: #fff;
+    border: none;
+}
+.tyre-size h4, .wheel-size h4, .vehicle h4  {
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+/**** Search Field Default *****/
+
+
+/**** Sort *****/
+#sort {
+    max-width: 300px;
+    border-radius: unset;
+    background: transparent;
+}
+#sort option {
+    font-size: .8rem;
+
+}
+#sort:focus {
+    box-shadow: none !important;
+    border: 1px solid var(--company-yellow-color);
+}
+.default-h-four {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+}
+/**** End Sort *****/
+
+/**** Product  card ****/
+.tyre-card {
+    width: 100%;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.tyre-card img {
+    width: 100%;
+    height: 100%;
+}
+.new {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 80px;
+    background: var(--company-red-color);
+    color: #fff;
+    padding: .3rem 0 .3rem .3rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 75% 100%, 0% 100%);
+}
+.product-detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, .8);
+}
+.product-detail h5 {
+    font-weight: 700;
+    font-size: .8rem;
+}
+.product-detail .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--company-red-color);
+}
+span.page {
+    border: 1px solid var(--defaut-text-color);
+    height: 40px;
+    width: 40px;
+    margin: .2rem;
+    border-radius: 50%;
+    text-align: center;
+    padding: .4rem .8rem;
+    background: var(--company-red-color);
+    color: #fff;
+    transition: .3s;
+}
+span.page:hover {
+    color: var(--company-red-color);
+    background: #fff;
+}
+button.page {
+    box-shadow: none;
+    background: transparent;
+    border: 1px solid var(--defaut-text-color);
+    height: 40px;
+    width: 40px;
+    margin: .2rem;
+    border-radius: 50%;
+    text-align: center;
+    padding: .4rem .8rem;
+    background: var(--company-red-color);
+    color: #fff;
+    transition: .3s;
+}
+
+/**** Spares Section ****/
+#spares .default-h-four {
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+}
+#spares .default-h-four:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -.5rem;
+    left: 0;
+    background-color: var(--company-red-color);
+}
+.product-item {
+    border: 1px solid rgb(219, 219, 219);
+}
+.product-img {
+    position: relative;
+    overflow: hidden;
+}
+.btns {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    font-size: 15px;
+    font-weight: 300;
+    transition: all .3s ease-in-out;
+}
+.btns button {
+    border: none;
+    background: rgb(39, 39, 39);
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+.btns button:hover {
+    color: var(--company-red-color);
+}
+.product-img:hover .btns{
+    bottom: 0;
+}
+.heart-icon {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    font-size: 18px;
+}
+.product-type {
+    font-size: 13px;
+    opacity: .8;
+}
+.product-name {
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+}
+.product-name:hover {
+    color: var(--company-red-color) !important;
+}
+.product-price {
+    color: var(--company-red-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+.rating {
+    font-size: 13px;
+    color: var(--company-yellow-color);
+}
+button.owl-next, button.owl-prev {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+/*** Home search ***/
+.search-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.search-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.search-fields {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.search-fields label {
+    width: 4rem;
+    height: 4rem;
+    background: hsl(148, 81%, 27%);
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-fields #l-profile {
+    background: hsl(47, 95%, 70%);
+    color: #202020;
+}
+.search-fields #l-wheel-size {
+    background: hsl(354, 76%, 50%);
+}
+.search-fields #l-speed {
+    background: #202020;
+    color: #fff;
+}
+
+.search-fields select {
+    padding-left: 0;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+}
+.search-fields button {
+    border-radius: .5rem;
+    box-shadow: none;
+    border: 1px solid hsl(47, 95%, 70%);
+    text-transform: uppercase;
+    padding: .3rem .5rem;
+    margin-top: 1rem;
+    background: hsl(47, 95%, 70%);
+    color: #333;
+    visibility: hidden;
+    font-weight: 600;
+}
+.search-fields select:focus {
+    outline: none !important ;
+    box-shadow: none;
+}
+/***** Auth Form ****/
+.form-box {
+    max-width: 600px;
+    height: 520px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+.button-box {
+    width: 220px;
+    border-radius: 30px;
+    background: #fdfdfd;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    margin: 10px auto;
+}
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-weight: 500;
+
+}
+#movingBtn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    border-radius: 50px;
+    transition: .5s;
+}
+#company {
+    position: absolute;
+    left: 0;
+    transition: .5s;
+}
+#individual {
+    position: absolute;
+    left: 600px;
+    transition: .5s;
+}
+.authentication {
+    height: 100vh;
+}
+.auth-form {
+    max-width: 600px;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+#login-form {
+    max-width: 360px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+.authentication form a:hover {
+    color: #444 !important;
+}
+.form_title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+}
+.form_div {
+    position: relative;
+    height: 45px;
+    margin-bottom: 2.8rem;
+}
+.form_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: .9rem;
+    border: 1px solid var(--lite-text-color);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+}
+.form_label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    background-color: #fff;
+    color: var(--defaut-text-color);
+    transition: .3s;
+}
+.auth-form-button {
+    display: block;
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--company-red-color);
+    color: #fff;
+    transition: .3s;
+    border-radius: .5rem;
+}
+.auth-form-button:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+.form_input:focus {
+    border: 1px solid var(--company-green-color);
+}
+.form_input:focus + .form_label {
+    top: -.8rem;
+    left: .8rem;
+    color: var(--company-green-color);
+    font-size: .8rem;
+    font-weight: 500;
+    z-index: 10;
+}
+.form_input:not(:placeholder-shown).form_input:not(:focus) + .form_label {
+    top: -.8rem;
+    color: var(--company-green-color);
+    font-size: .8rem;
+    font-weight: 500;
+    z-index: 10;
+}
+.form_div span {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    z-index: 2;
+}
+.form_div span .fa {
+    font-size: 1rem;
+}
+.form_div small.message {
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    color: var(--company-red-color);
+}
+.form_div.error input {
+    border: 1px solid var(--company-red-color);
+}
+.form_div.success input {
+    border: 1px solid var(--company-green-color);
+}
+.form_div.success small {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    #lower-search-fields {
+        margin-top: 15rem;
+    }
+    .search-fields {
+        top: 100%;
+        width: 60%;
+    }
+    .search-fields select {
+        padding-right: 0;
+        margin-top: 1rem;
+    }
+    #tyre-search .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' /%3e%3c/svg%3e") !important;
+
+    }
+    .search-fields select::-ms-expand {
+        display: none;
+    }
+}
