@@ -42,3 +42,13 @@ file.addEventListener('change', (e) => {
     const fileNameAndSize = `${fileName} - ${fileSize}KB`;
     document.querySelector('.file-name').textContent = fileNameAndSize;
 });
+
+// Hide success message after 3 seconds
+setTimeout(() => {
+    const alert = document.getElementById('alert');
+
+    // 👇️ removes element from DOM
+    alert.style.display = 'none';
+
+}, 3000);
+

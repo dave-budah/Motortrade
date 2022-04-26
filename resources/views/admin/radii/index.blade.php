@@ -7,9 +7,9 @@
         <div class="floatingBtn">
             <a href="{{ route('admin.radii.create') }}" class="btn btn-float">Create Tyre Radius</a>
         </div>
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+        @if (session()->has('success'))
+            <div class="alert alert-success" id="alert" role="alert">
+                {{ session('success') }}
             </div>
         @endif
         <div class="table-card">
@@ -34,8 +34,7 @@
                             <td id="actions">
                                 {{--                                <a href="{{ route('admin.tags.edit', $radius) }}" class="fas fa-edit"></a>--}}
                                 <a href="#" class="fas fa-edit"></a>
-                                {{--                                <form action="{{ route('admin.tags.destroy', $radius) }}" method="POST">--}}
-                                <form action="#" method="POST">
+                               <form action="{{ route('admin.tags.destroy', $radius) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="fas fa-trash"></button>

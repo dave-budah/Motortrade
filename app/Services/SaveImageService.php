@@ -14,7 +14,8 @@ class SaveImageService
     {
         $path = Storage::putFile('public/' . $folder, new File($image));
         $targetPath = storage_path('app/' . $path);
-        Image::make($image)->resize(1200, 630)->save($targetPath);
+//        Image::make($image)->resize(1200, 630)->save($targetPath);
+        Image::make($image)->resize(630, 630)->save($targetPath);
         $model->image = $path;
         $model->save();
     }

@@ -7,9 +7,9 @@
         <div class="floatingBtn">
         <a href="{{ route('admin.widths.create') }}" class="btn btn-float">Create Tyre width</a>
         </div>
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+        @if (session()->has('success'))
+            <div class="alert alert-success" id="alert" role="alert">
+                {{ session('success') }}
             </div>
         @endif
         <div class="table-card">
@@ -33,8 +33,7 @@
                             <td>{{ $width->created_at->format('d M Y') }}</td>
                             <td id="actions">
                                 <a href="{{ route('admin.widths.edit', $width) }}" class="fas fa-edit"></a>
-                                {{--                                <form action="{{ route('admin.tags.destroy', $width) }}" method="POST">--}}
-                                <form action="#" method="POST">
+                                <form action="{{ route('admin.tags.destroy', $width) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="fas fa-trash"></button>

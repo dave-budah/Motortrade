@@ -26,11 +26,8 @@ class PostRequest extends FormRequest
     {
         return [
             'title'=> ['required', 'min:3', 'max:255'],
-            'image'=> ['sometimes', 'image', 'mimes:jpeg,jpg,png'],
-            'body'=> ['sometimes', ''],
+            'image'=> ['nullable', 'image', 'mimes:jpeg,jpg,png'],
             'price'=> ['sometimes', ''],
-            'photo_credit_text'=> ['nullable'],
-            'photo_credit_link'=> ['nullable'],
             'tags'=> ['array', 'nullable'],
             'tags.*'=> ['exists:tags,id'],
             'brands'=> ['array', 'nullable'],
@@ -48,24 +45,16 @@ class PostRequest extends FormRequest
         return $this->user();
     }
 
-    public function body(): ?string
-    {
-        return $this->get('body');
-    }
-
     public function image(): string
     {
         return $this->image;
     }
 
-    public function photoCreditLink(): ?string
+    public function title(): string
     {
-        return $this->get('photo_credit_link');
+        return $this->get('title');
     }
-    public function photoCreditText(): ?string
-    {
-        return $this->get('photo_credit_text');
-    }
+
     public function tags(): array
     {
         return $this->get('tags', []);
@@ -87,6 +76,10 @@ class PostRequest extends FormRequest
         return $this->get('widths', []);
     }
 
+    public function price(): string
+    {
+        return $this->get('price');
+    }
 
 
 }

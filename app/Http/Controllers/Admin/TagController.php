@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TagRequest;
 use App\Jobs\CreateTag;
+use App\Jobs\DeleteTag;
 use App\Models\Tag;
 use App\Models\User;
 use App\Policies\UserPolicy;
@@ -60,6 +61,7 @@ class TagController extends Controller
 
     public function destroy(Tag $tag)
     {
-        //
+        $this->dispatchSync(new DeleteTag($tag));
+        return redirect()->route('admin.tags.index')->with('success', 'Tag deleted successfully.');
     }
 }

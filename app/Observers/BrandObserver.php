@@ -14,23 +14,13 @@ class BrandObserver
         $brand->save();
     }
 
-    /**
-     * Handle the Brand "updated" event.
-     *
-     * @param  \App\Models\Brand  $brand
-     * @return void
-     */
+
     public function updated(Brand $brand)
     {
         //
     }
 
-    /**
-     * Handle the Brand "deleted" event.
-     *
-     * @param  \App\Models\Brand  $brand
-     * @return void
-     */
+
     public function deleted(Brand $brand)
     {
         //

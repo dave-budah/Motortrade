@@ -39,13 +39,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Wheels</a>
+                            <a class="nav-link active" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tyres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Accessories</a>
+                            <a class="nav-link" href="{{ route('brands.index') }}">Tire Brands</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" tabindex="-1">Contact</a>

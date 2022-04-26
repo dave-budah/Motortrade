@@ -17,6 +17,15 @@ input:focus,
 select:focus {
     box-shadow: none;
 }
+.text-blue-500 {
+    color: rgb(59, 130, 246);
+}
+.text-gray-700 {
+    color: rgb(29, 78, 216);
+}
+.social-title h2 {
+    color: rgb(59, 130, 246);
+}
 .topbar-container {
     background: var(--company-red-color);
     transition: .3s;
@@ -296,21 +305,22 @@ button.page {
     color: #fff;
     transition: .3s;
 }
-
-/**** Spares Section ****/
-#spares .default-h-four {
-    font-weight: 700;
-    letter-spacing: 2px;
-    position: relative;
+.product-specs span {
+    font-size: 1.4rem;
+    margin: 0 .3rem;
 }
-#spares .default-h-four:after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    bottom: -.5rem;
-    left: 0;
-    background-color: var(--company-red-color);
+.social-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid #0a58ca;
+    padding: .3rem;
+}
+.social-share .fab {
+    font-size: 1.2rem;
 }
 .product-item {
     border: 1px solid rgb(219, 219, 219);
@@ -380,7 +390,6 @@ button.owl-next, button.owl-prev {
 .search-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 .search-fields {
     position: absolute;

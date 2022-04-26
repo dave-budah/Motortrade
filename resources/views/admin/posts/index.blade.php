@@ -7,9 +7,9 @@
         <div class="floatingBtn">
          <a href="{{ route('admin.posts.create') }}" class="btn btn-float">Create Post</a>
         </div>
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+        @if (session()->has('success'))
+            <div class="alert alert-success" id="alert" role="alert">
+                {{ session('success') }}
             </div>
         @endif
         <div class="table-card">
@@ -32,14 +32,14 @@
                             <td>{{ $post->author()->name() }}</td>
                             <td>{{ $post->created_at->format('d M Y') }}</td>
                             <td id="actions">
-{{--                                <a href="{{ route('admin.posts.edit', $post) }}" class="fas fa-edit"></a>--}}
-                                <a href="#" class="fas fa-edit"></a>
-                                <form action="" method="POST">
-                                    {{--                                        {{ route('admin.posts.destroy', $post) }}--}}
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="fas fa-trash"></button>
-                                </form>
+
+                            <a href="{{ route('admin.posts.edit', $post) }}" class="fas fa-edit"></a>
+
+                            <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="fas fa-trash"></button>
+                            </form>
                             </td>
                         </tr>
                     @endforeach

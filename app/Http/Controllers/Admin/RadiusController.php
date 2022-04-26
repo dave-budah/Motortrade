@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RadiusRequest;
 use App\Jobs\CreateRadius;
+use App\Jobs\DeleteRadius;
 use App\Models\Radius;
 use App\Models\User;
 use App\Policies\UserPolicy;
@@ -59,6 +60,7 @@ class RadiusController extends Controller
 
     public function destroy(Radius $radius)
     {
-        //
+        $this->dispatchSync(new DeleteRadius($radius));
+        return redirect()->route('admin.radii.index')->with('success', 'Radius deleted successfully.');
     }
 }

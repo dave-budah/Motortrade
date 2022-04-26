@@ -54,6 +54,12 @@ html, p, tr, th, h1,h2,h3,h4,h5,h6 {
     justify-content: center;
     align-items: center;
 }
+.alert-success {
+    background-color: var(--heading-color);
+    color: #155724;
+    margin-bottom: 2rem;
+    padding: .3rem 3rem;
+}
 body{
     min-height: 100vh;
     background-color: var(--body-color);

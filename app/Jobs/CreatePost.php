@@ -18,53 +18,49 @@ class CreatePost implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $title;
-    private $body;
+    private $price;
     private $image;
-    private $photoCreditLink;
-    private $photoCreditText;
     private $author;
     private $tags;
     private $radii;
     private $widths;
     private $brands;
+    private $vehicles;
 
     public function __construct(
         string $title,
-        string $body,
+        ?string $price,
         ?string $image,
-        ?string $photoCreditLink,
-        ?string $photoCreditText,
         User $author,
         array $tags = [],
         array $radii = [],
         array $widths = [],
         array $brands = [],
+        array $vehicles = [],
     ) {
         $this->title = $title;
-        $this->body = $body;
+        $this->price = $price;
         $this->image = $image;
-        $this->photoCreditLink = $photoCreditLink;
-        $this->photoCreditText = $photoCreditText;
         $this->author = $author;
         $this->tags = $tags;
         $this->radii = $radii;
         $this->widths = $widths;
         $this->brands = $brands;
+        $this->vehicles = $vehicles;
     }
 
     public static function fromRequest(PostRequest $request): self
     {
         return new static(
             $request->title(),
-            $request->body(),
+            $request->price(),
             $request->image(),
-            $request->photoCreditLink(),
-            $request->photoCreditText(),
             $request->author(),
             $request->tags(),
             $request->radii(),
             $request->widths(),
             $request->brands(),
+            $request->vehicles(),
         );
     }
 
@@ -73,16 +69,15 @@ class CreatePost implements ShouldQueue
     {
         $post = new Post([
             'title' => $this->title,
-            'body' => $this->body,
+            'price' => $this->price,
             'image' => $this->image,
-            'photo_credit_link' => $this->photoCreditLink,
-            'photo_credit_text' => $this->photoCreditText,
         ]);
         $post->authoredBy($this->author);
         $post->syncTags($this->tags);
         $post->syncRadii($this->radii);
         $post->syncWidths($this->widths);
         $post->syncBrands($this->brands);
+        $post->syncVehicles($this->vehicles);
         SaveImageService::UploadImage($this->image, $post,Post::TABLE);
         return $post;
     }

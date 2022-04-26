@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WidthRequest;
 use App\Jobs\CreateWidth;
+use App\Jobs\DeleteWidth;
 use App\Models\User;
 use App\Models\Width;
 use App\Policies\UserPolicy;
@@ -38,48 +39,28 @@ class WidthController extends Controller
         return redirect()->route('admin.widths.index')->with('success', 'Width created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Width  $width
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Width $width)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Width  $width
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Width $width)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Width  $width
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Width $width)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Width  $width
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Width $width)
     {
-        //
+        $this->dispatchSync(new DeleteWidth($width));
+        return redirect()->route('admin.widths.index')->with('success', 'Width deleted successfully.');
     }
 }

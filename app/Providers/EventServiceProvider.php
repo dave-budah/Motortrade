@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use App\Models\Brand;
+use App\Models\Post;
 use App\Models\Radius;
 use App\Models\Tag;
 use App\Models\Vehicle;
 use App\Models\Width;
 use App\Observers\BrandObserver;
+use App\Observers\PostObserver;
 use App\Observers\RadiusObserver;
 use App\Observers\TagObserver;
 use App\Observers\VehicleObserver;
@@ -42,6 +44,7 @@ class EventServiceProvider extends ServiceProvider
         Vehicle::observe(VehicleObserver::class);
         Width::observe(WidthObserver::class);
         Radius::observe(RadiusObserver::class);
+        Post::observe(PostObserver::class);
     }
 
     /**

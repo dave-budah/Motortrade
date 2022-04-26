@@ -23,7 +23,7 @@ Route::group([ 'middleware' => ['isAdmin', 'auth'],'prefix' => 'admin', 'as' => 
         Route::post('/', [PostController::class, 'store'])->name('store');
         Route::get('{post}/edit', [PostController::class, 'edit'])->name('edit');
         Route::post('{post}', [PostController::class, 'update'])->name('update');
-        Route::delete('{post}', [PostController::class, 'destroy'])->name('delete');
+        Route::delete('{post}', [PostController::class, 'destroy'])->name('destroy');
         Route::get('/writer', WriterPostController::class, )->name('writer');
     });
 
