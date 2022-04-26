@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('price')->nullable();
             $table->foreignId('author_id')->nullable()->constrained('users')->onDelete('set null');
-            $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
+//            $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
             $table->timestamps();
         });
     }
